@@ -7,14 +7,14 @@ Advent of Code (no peeking 😠) - https://adventofcode.com/
 <table>
 <tr><td>
 
-| **Day** | **Language**     |
-| ------- | ---------------- |
-| 1       | [Go](./2023/01/) |
-| 2       | PowerShell       |
-| 3       | TBC              |
-| 4       | TBC              |
-| 5       | TBC              |
-| 6       | TBC              |
+| **Day** | **Language**             |
+| ------- | ------------------------ |
+| 1       | [Go](./2023/01/)         |
+| 2       | [PowerShell](./2023/02/) |
+| 3       | [Groovy](./2023/03/)     |
+| 4       | TBC                      |
+| 5       | TBC                      |
+| 6       | TBC                      |
 
 </td><td>
 
