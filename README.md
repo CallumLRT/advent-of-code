@@ -58,6 +58,8 @@ Advent of Code (no peeking 😠) - https://adventofcode.com/
 
 ## [arylatt](https://github.com/arylatt/)
 
+### [AoC 2024](https://github.com/arylatt/advent-of-code/tree/main/2024)
+
 ### [AoC 2023](https://github.com/arylatt/advent-of-code/tree/main/2023)
 
 ### [AoC 2022](https://github.com/arylatt/advent-of-code/tree/main/2022)
@@ -66,12 +68,14 @@ Advent of Code (no peeking 😠) - https://adventofcode.com/
 
 ### [AoC 2015](https://github.com/arylatt/advent-of-code/tree/main/2015)
 
-## [zimrh](https://github.com/zimrh)
+## [rmhyde](https://github.com/rmhyde)
 
-### [AoC 2023](https://github.com/zimrh/advent-of-code-2023)
+### [AoC 2024](https://github.com/rmhyde/advent-of-code-2024)
 
-### [AoC 2022](https://github.com/zimrh/advent-of-code-2022)
+### [AoC 2023](https://github.com/rmhyde/advent-of-code-2023)
 
-### [AoC 2021](https://github.com/zimrh/advent-of-code-2021)
+### [AoC 2022](https://github.com/rmhyde/advent-of-code-2022)
+
+### [AoC 2021](https://github.com/rmhyde/advent-of-code-2021)
 
 ![lil doggos](./images/dog-hug.gif)
