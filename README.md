@@ -7,14 +7,14 @@ Advent of Code (no peeking 😠) - https://adventofcode.com/
 <table>
 <tr><td>
 
-| **Day** | **Language**         |
-| ------- | -------------------- |
-| 1       | [Python](./2024/01/) |
-| 2       | TBC                  |
-| 3       | TBC                  |
-| 4       | TBC                  |
-| 5       | TBC                  |
-| 6       | TBC                  |
+| **Day** | **Language**              |
+| ------- | ------------------------- |
+| 1       | [Python](./2024/01/)      |
+| 2       | [Go](./2024/02)           |
+| 3       | [Visual Basic](./2024/03) |
+| 4       | TBC                       |
+| 5       | TBC                       |
+| 6       | TBC                       |
 
 </td><td>
 
