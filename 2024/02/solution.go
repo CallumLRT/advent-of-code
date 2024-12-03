@@ -55,8 +55,9 @@ func diff(a, b int) int {
     return true
  }
 
- func reportCheck(report string) bool {
+ func reportCheck(report string) (bool, int) {
     safe := true
+    failedIndex := -1
     direction := initial
     levels := strings.Split(report, " ")
 
@@ -73,18 +74,19 @@ func diff(a, b int) int {
         safe = direction.safeSequence(currentLevel, previousLevel)
 
         if !safe {
+            failedIndex = index // The index of the previous level in `levels` due to `range levels[1:]`
             break
         }
     }
     
-    return safe
+    return safe, failedIndex
  }
 
 func Solution1(reports []string) int {
     safe_reports := 0
 
     for _, report := range reports {
-        if reportCheck(report) {
+        if safe, _ := reportCheck(report); safe {
             safe_reports++
         }
     }
@@ -95,23 +97,36 @@ func deleteElement(slice []string, index int) []string {
     return append(slice[:index], slice[index+1:]...)
 }
 
+func testNeighbours(report string, failedIndex int) bool {
+    levels := strings.Split(report, " ")
+    var testIndexes []int
+    if failedIndex > 0 {
+        testIndexes = []int{failedIndex-1, failedIndex+1} // This is safe because we're basing this index off an offset of 1, i.e. `range levels[1:]`
+    } else {
+        testIndexes = []int{0, 1}
+    }
+
+    for _, index := range testIndexes {
+        tmp := make([]string, len(levels))
+        copy(tmp, levels)
+        tmp = deleteElement(tmp, index)
+
+        if safe, _ := reportCheck(strings.Join(tmp, " ")); safe {
+            return true
+        }
+    }
+    return false
+}
+
 func Solution2(reports []string) int {
     safe_reports := 0
 
     for _, report := range reports {
-        if reportCheck(report) {
+        if safe, failedIndex := reportCheck(report); safe {
             safe_reports++
         } else {
-            levels := strings.Split(report, " ")
-            for index := range levels {
-                tmp := make([]string, len(levels))
-                copy(tmp, levels)
-                tmp = deleteElement(tmp, index)
-
-                if reportCheck(strings.Join(tmp, " ")) {
-                    safe_reports++
-                    break
-                }
+            if testNeighbours(report, failedIndex) {
+                safe_reports++
             }
         }
     }
