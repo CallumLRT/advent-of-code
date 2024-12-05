@@ -4,6 +4,8 @@ Advent of Code (no peeking 😠) - https://adventofcode.com/
 
 # Current AoC — 2024
 
+Languages are picked at random from a list of 30 using [wheelofnames.com](https://wheelofnames.com/), I've saved this to source control [here](./2024/aoc24.wheel).
+
 <table>
 <tr><td>
 
@@ -12,7 +14,7 @@ Advent of Code (no peeking 😠) - https://adventofcode.com/
 | 1       | [Python](./2024/01/)      |
 | 2       | [Go](./2024/02)           |
 | 3       | [Visual Basic](./2024/03) |
-| 4       | TBC                       |
+| 4       | [Clojure](./2024/04)      |
 | 5       | TBC                       |
 | 6       | TBC                       |
 
