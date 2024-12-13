@@ -6,6 +6,39 @@ project.lock.json
 *.pyc
 nupkg/
 
+# Clojure
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+/lib/
+/classes/
+/target/
+/checkouts/
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.lein-failures
+.nrepl-port
+.cpcache/
+
+.hgignore
+.hg/
+/.prepl-port
+/checkouts
+profiles.clj
+.idea/
+/.lein-*
+.idea/
+*.iml
+.vscode
+.lsp/*
+.clj-kondo/*
+.calva/*
+
+/.shadow-cljs/
+node_modules/
+
 # Visual Studio Code
 .vscode/
 
