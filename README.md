@@ -2,21 +2,21 @@
 
 Advent of Code (no peeking 😠) - https://adventofcode.com/
 
-# Current AoC — 2024
+# Current AoC — 2025
 
-Languages are picked at random from a list of 30 using [wheelofnames.com](https://wheelofnames.com/), I've saved this to source control [here](./2024/aoc24.wheel).
+Languages are picked at random from a list of 30 using [wheelofnames.com](https://wheelofnames.com/), I've saved this to source control [here](./2025/aoc.wheel).
 
 <table>
 <tr><td>
 
-| **Day** | **Language**              |
-| ------- | ------------------------- |
-| 1       | [Python](./2024/01/)      |
-| 2       | [Go](./2024/02)           |
-| 3       | [Visual Basic](./2024/03) |
-| 4       | [Clojure](./2024/04)      |
-| 5       | TBC                       |
-| 6       | TBC                       |
+| **Day** | **Language** |
+| ------- | ------------ |
+| 1       | TBC          |
+| 2       | TBC          |
+| 3       | TBC          |
+| 4       | TBC          |
+| 5       | TBC          |
+| 6       | TBC          |
 
 </td><td>
 
@@ -29,36 +29,14 @@ Languages are picked at random from a list of 30 using [wheelofnames.com](https:
 | 11      | TBC          |
 | 12      | TBC          |
 
-</td><td>
-
-| **Day** | **Language** |
-| ------- | ------------ |
-| 13      | TBC          |
-| 14      | TBC          |
-| 15      | TBC          |
-| 16      | TBC          |
-| 17      | TBC          |
-| 18      | TBC          |
-
-</td><td>
-
-| **Day** | **Language** |
-| ------- | ------------ |
-| 19      | TBC          |
-| 20      | TBC          |
-| 21      | TBC          |
-| 22      | TBC          |
-| 23      | TBC          |
-| 24      | TBC          |
-
 </td></tr> 
 </table>
-
-## Christmas Day — Language: TBD
 
 # Friends
 
 ## [arylatt](https://github.com/arylatt/)
+
+### [AoC 2025](https://github.com/arylatt/advent-of-code/tree/main/2025)
 
 ### [AoC 2024](https://github.com/arylatt/advent-of-code/tree/main/2024)
 
