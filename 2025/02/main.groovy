@@ -22,18 +22,20 @@ class Main {
     }
 
     boolean checkRepeatedNums(String repeatedNum, String currentIdStr, int stringLength) {
+        int repeatedNumLen = repeatedNum.length()
+
         // The whole string needs to be repeated, so if it's indivisible, skip processing
-        if (stringLength % repeatedNum.length() != 0) {
+        if (stringLength % repeatedNumLen != 0) {
             return false
         }
         int j = 0
-        for (int i = repeatedNum.length(); i < stringLength; i++) {
+        for (int i = repeatedNumLen; i < stringLength; i++) {
             if (currentIdStr[i] != repeatedNum[j]) {
                 return false
             }
 
             j++
-            if (j == repeatedNum.length()) {
+            if (j == repeatedNumLen) {
                 j = 0
             }
         }
@@ -45,7 +47,7 @@ class Main {
         String repeatedNum = ''
         int stringLength = currentIdStr.length()
 
-        for (int i = 0; i < stringLength && repeatedNum.length() < Math.ceil(stringLength / 2); i++) {
+        for (int i = 0; i < stringLength && repeatedNum.length() < Math.floor(stringLength / 2); i++) {
             repeatedNum += currentIdStr[i]
             if (checkRepeatedNums(repeatedNum, currentIdStr, stringLength)) {
                 return true
@@ -55,7 +57,7 @@ class Main {
     }
 
     def main() {
-        String fileContents = new File('sample.txt').text
+        String fileContents = new File('input.txt').text
         Long invalidIdTotal = 0
         int solution = 2
 
