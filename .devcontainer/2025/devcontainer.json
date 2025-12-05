@@ -1,0 +1,10 @@
+{
+	"name": "Advent of Code 2025",
+	"image": "mcr.microsoft.com/devcontainers/base:trixie",
+	"workspaceFolder": "/workspaces/advent-of-code/2025",
+
+	"features": {
+		"ghcr.io/devcontainers/features/go:1": {},
+		"ghcr.io/devcontainers-extra/features/groovy-sdkman:2": {}
+	}
+}
