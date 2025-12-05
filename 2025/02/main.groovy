@@ -1,10 +1,10 @@
 class Main {
 
-    boolean checkInvalidId(Long currentId) {
+    boolean checkInvalidIdSol1(Long currentId) {
         String currentIdStr = currentId as String
         int stringLength = currentIdStr.length()
 
-        // Solution 1: An odd length can never be invalid
+        // An odd length can never be invalid
         if (stringLength % 2 != 0) {
             return false
         }
@@ -15,15 +15,49 @@ class Main {
             if (currentIdStr[i] != currentIdStr[j]) {
                 return false
             }
-            i += 1
+            i++
         }
 
         return true
     }
 
+    boolean checkRepeatedNums(String repeatedNum, String currentIdStr, int stringLength) {
+        // The whole string needs to be repeated, so if it's indivisible, skip processing
+        if (stringLength % repeatedNum.length() != 0) {
+            return false
+        }
+        int j = 0
+        for (int i = repeatedNum.length(); i < stringLength; i++) {
+            if (currentIdStr[i] != repeatedNum[j]) {
+                return false
+            }
+
+            j++
+            if (j == repeatedNum.length()) {
+                j = 0
+            }
+        }
+        return true
+    }
+
+    boolean checkInvalidIdSol2(Long currentId) {
+        String currentIdStr = currentId as String
+        String repeatedNum = ''
+        int stringLength = currentIdStr.length()
+
+        for (int i = 0; i < stringLength && repeatedNum.length() < Math.ceil(stringLength / 2); i++) {
+            repeatedNum += currentIdStr[i]
+            if (checkRepeatedNums(repeatedNum, currentIdStr, stringLength)) {
+                return true
+            }
+        }
+        return false
+    }
+
     def main() {
-        String fileContents = new File('input.txt').text
+        String fileContents = new File('sample.txt').text
         Long invalidIdTotal = 0
+        int solution = 2
 
         for (String idRange in fileContents.split(',')) {
             String[] idRangeArr = idRange.split('-')
@@ -31,7 +65,9 @@ class Main {
             Long endId = idRangeArr[1] as Long
 
             for (Long id in startId..endId) {
-                if (checkInvalidId(id)) {
+                if (solution == 1 && checkInvalidIdSol1(id)) {
+                    invalidIdTotal += id
+                } else if (checkInvalidIdSol2(id)) {
                     invalidIdTotal += id
                 }
             }
