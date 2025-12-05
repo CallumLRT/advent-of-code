@@ -13,57 +13,71 @@ func check(e error) {
 	}
 }
 
-func leftTurn(p *int, c int) {
-	*p = *p - c
+func leftTurn(position *int, password *int, clicks int, s int) {
+	startingPosition := *position
+	*position = *position - clicks
 
-	if *p < 0 {
-		*p = *p + 100
+	if *position < 0 {
+		*position = *position + 100
+		if s == 2 && *position != 0 && startingPosition != 0 {
+			*password += 1
+		}
 	}
 }
 
-func rightTurn(p *int, c int) {
-	*p = *p + c
+func rightTurn(position *int, password *int, clicks int, s int) {
+	startingPosition := *position
+	*position = *position + clicks
 
-	if *p > 99 {
-		*p = *p - 100
+	if *position > 99 {
+		*position = *position - 100
+		if s == 2 && *position != 0 && startingPosition != 0 {
+			*password += 1
+		}
 	}
 }
 
-func actionInstruction(p *int, i string) {
+func actionInstruction(position *int, password *int, i string, s int) {
 	clicks, err := strconv.Atoi(i[1:])
 	check(err)
+
+	if s == 2 {
+		fullRotations := clicks / 100
+		*password += fullRotations
+	}
 
 	clicks = clicks % 100
 
 	if i[0] == 'L' {
-		leftTurn(p, clicks)
+		leftTurn(position, password, clicks, s)
 	} else {
-		rightTurn(p, clicks)
+		rightTurn(position, password, clicks, s)
 	}
 }
 
-func main() {
+func findSolution(path string, solution int) int {
 	password := 0
 	position := 50
-	inputFile, err := os.Open("./input.txt")
+	inputFile, err := os.Open(path)
 	check(err)
 
 	scanner := bufio.NewScanner(inputFile)
 	line := 0
 	for scanner.Scan() {
 		instruction := scanner.Text()
-		fmt.Printf("Line: %d | Instruction: %q | Position: %d \n", line, instruction, position)
 		line++
 
-		actionInstruction(&position, instruction)
+		actionInstruction(&position, &password, instruction, solution)
 
 		if position == 0 {
 			password += 1
 		}
-
-		fmt.Printf("Position after: %d | Password count: %d \n", position, password)
 	}
 
-	fmt.Printf("Password: %d \n", password)
 	check(scanner.Err())
+	return password
+}
+
+func main() {
+	fmt.Printf("Password: %d \n", findSolution("input.txt", 2))
 }
