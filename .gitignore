@@ -1,3 +1,7 @@
+# Input and sample files:
+input.txt
+sample.txt
+
 # .NET
 *.swp
 *.*~

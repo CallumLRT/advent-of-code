@@ -11,8 +11,8 @@ Languages are picked at random from a list of 30 using [wheelofnames.com](https:
 
 | **Day** | **Language** |
 | ------- | ------------ |
-| 1       | TBC          |
-| 2       | TBC          |
+| 1       | Go           |
+| 2       | Groovy       |
 | 3       | TBC          |
 | 4       | TBC          |
 | 5       | TBC          |
