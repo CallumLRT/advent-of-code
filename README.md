@@ -13,7 +13,7 @@ Languages are picked at random from a list of 30 using [wheelofnames.com](https:
 | ------- | ------------ |
 | 1       | Go           |
 | 2       | Groovy       |
-| 3       | TBC          |
+| 3       | Terraform    |
 | 4       | TBC          |
 | 5       | TBC          |
 | 6       | TBC          |
