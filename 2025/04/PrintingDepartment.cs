@@ -45,12 +45,8 @@ class PrintingDepartment
         RowLength = inputCharArray[0].Length;
         NumberOfLines = inputCharArray.Length;
 
-        foreach (var row in inputCharArray)
-        {
-            Console.WriteLine(string.Join(" ", row));
-        }
-
         Console.WriteLine("Solution 1: " + SolutionOne(inputCharArray));
+        Console.WriteLine("Solution 2: " + SolutionTwo(inputCharArray));
     }
 
     private static char[][] FileToCharArray(string filePath)
@@ -85,19 +81,41 @@ class PrintingDepartment
 
     private static int SolutionOne(char[][] input)
     {
+        return SolutionTwo(input, true);
+    }
+
+    private static int SolutionTwo(char[][] input, bool iterate = false)
+    {
+        var rollsRemoved = 0;
         var accessibleRolls = 0;
 
-        foreach (var (rowIndex, row) in input.Select((row, rowIndex) => (rowIndex, row)))
+        do
         {
-            foreach (var (charIndex, character) in row.Select((character, charIndex) => (charIndex, character)))
+            accessibleRolls = 0;
+
+            foreach (var (rowIndex, row) in input.Select((row, rowIndex) => (rowIndex, row)))
             {
-                if (character == '@')
+                foreach (var (charIndex, character) in row.Select((character, charIndex) => (charIndex, character)))
                 {
-                    accessibleRolls += LookAdjacently(input, new Vector(charIndex, rowIndex)) ? 1 : 0;
+                    if (character == '@')
+                    {
+                        if (LookAdjacently(input, new Vector(charIndex, rowIndex)))
+                        {
+                            accessibleRolls += 1;
+                            rollsRemoved += 1;
+                            input[rowIndex][charIndex] = iterate ? '@' : '.';
+                        }
+                    }
                 }
             }
-        }
 
-        return accessibleRolls;
+            if (iterate)
+            {
+                return accessibleRolls;
+            }
+
+        } while (accessibleRolls > 0);
+
+        return rollsRemoved;
     }
 }
