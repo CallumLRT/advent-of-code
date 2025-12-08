@@ -6,12 +6,16 @@
 	"features": {
 		"ghcr.io/devcontainers/features/go:1": {},
 		"ghcr.io/devcontainers-extra/features/groovy-sdkman:2": {},
-		"ghcr.io/devcontainers/features/terraform:1": {}
+		"ghcr.io/devcontainers/features/terraform:1": {},
+		"ghcr.io/devcontainers/features/dotnet:2": {}
 	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"NicolasVuillamy.vscode-groovy-lint"
+				"NicolasVuillamy.vscode-groovy-lint",
+				"yzhang.markdown-all-in-one",
+				"ms-dotnettools.csharp",
+				"ms-dotnettools.csdevkit"
 			]
 		}
 	}

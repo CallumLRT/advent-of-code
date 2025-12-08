@@ -9,14 +9,14 @@ Languages are picked at random from a list of 30 using [wheelofnames.com](https:
 <table>
 <tr><td>
 
-| **Day** | **Language** |
-| ------- | ------------ |
-| 1       | Go           |
-| 2       | Groovy       |
-| 3       | Terraform    |
-| 4       | TBC          |
-| 5       | TBC          |
-| 6       | TBC          |
+| **Day** | **Language**            |
+| ------- | ----------------------- |
+| 1       | [Go](./2025/01/)        |
+| 2       | [Groovy](./2025/02/)    |
+| 3       | [Terraform](./2025/03/) |
+| 4       | [C#](./2025/04/)        |
+| 5       | TBC                     |
+| 6       | TBC                     |
 
 </td><td>
 
