@@ -15,7 +15,7 @@ Languages are picked at random from a list of 30 using [wheelofnames.com](https:
 | 2       | [Groovy](./2025/02/GiftShop.groovy)   |
 | 3       | [Terraform](./2025/03/lobby.tf)       |
 | 4       | [C#](./2025/04/PrintingDepartment.cs) |
-| 5       | TBC                                   |
+| 5       | [Kotlin](./2025/05/Cafeteria.kt)      |
 | 6       | TBC                                   |
 
 </td><td>
