@@ -3,7 +3,8 @@ import java.io.File
 fun main() {
     val cafeteria = Cafeteria(File("/workspaces/advent-of-code/2025/05/input.txt"))
 
-    println("Solution 1 result:" + " = " + cafeteria.solutionOne())
+    println("Solution 1 result" + " = " + cafeteria.solutionOne())
+    println("Solution 2 result" + " = " + cafeteria.solutionTwo())
 }
 
 class Cafeteria(private val file: File) {
@@ -13,6 +14,34 @@ class Cafeteria(private val file: File) {
     init {
         println("Cafeteria initialized with file: ${file.path}")
         loadData()
+    }
+
+    public fun solutionTwo(): Long {
+        var sortedRanges = freshRanges.sortedBy { it.first }.toMutableList()
+        
+        var index = 0
+
+        while (index <= sortedRanges.size - 2) {
+            val currentRange = sortedRanges[index]
+            val nextRange = sortedRanges.elementAt(index + 1)
+
+            if(currentRange.last >= nextRange.first) {
+                val newStart = currentRange.first
+                val newEnd = maxOf(currentRange.last, nextRange.last)
+                sortedRanges[index] = newStart..newEnd
+                sortedRanges.remove(nextRange)
+            } else {
+                index++
+            }
+        }
+
+        var totalIds = 0L
+
+        for (range in sortedRanges) {
+            totalIds += range.last - range.first + 1
+        }
+
+        return totalIds
     }
 
     public fun solutionOne(): Int {
@@ -41,11 +70,9 @@ class Cafeteria(private val file: File) {
                     ingredients.add(line.trim().toLong())
                 } else {
                     val parts = line.split("-")
-                    val start = parts.getOrNull(0)?.toLong()
-                    val end = parts.getOrNull(1)?.toLong()
-                    if (start != null && end != null) {
-                        freshRanges.add(start..end)
-                    }
+                    val start = parts.get(0).toLong()
+                    val end = parts.get(1).toLong()
+                    freshRanges.add(start..end)
                 }
             }
         }
