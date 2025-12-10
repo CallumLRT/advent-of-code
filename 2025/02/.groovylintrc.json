@@ -1,9 +1,6 @@
 {
     "extends": "recommended",
     "rules": {
-        "ClassNameSameAsFilename": {
-            "enabled": false
-        },
         "JavaIoPackageAccess": {
             "enabled": false
         }

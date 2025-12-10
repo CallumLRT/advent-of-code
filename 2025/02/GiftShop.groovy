@@ -1,4 +1,4 @@
-class Main {
+class GiftShop {
 
     boolean checkInvalidIdSol1(Long currentId) {
         String currentIdStr = currentId as String
