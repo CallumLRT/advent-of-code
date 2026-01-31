@@ -1,0 +1,18 @@
+services:
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/base:bookworm
+    tty: true
+    stdin_open: true
+    volumes:
+      - ../..:/workspaces/advent-of-code:cached
+    models:
+      - coding-assistant
+
+models:
+  coding-assistant:
+    model: hf.co/qwen/qwen2.5-coder-32b-instruct-gguf:Q4_K_M
+    runtime_flags:
+      - "--flash-attention" 
+      - "--no-mmap"         # Forces loading into RAM instead of memory-mapping shards
+      - "--n-gpu-layers"
+      - "40"                # Start lower (40 instead of 99) to verify it loads

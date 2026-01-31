@@ -1,0 +1,24 @@
+# This gets symlink'd into ~/.continue/config.yaml as part of the devcontainer `postCreateCommand`
+# as that's where continue looks for this file. You have to also set the following in your VSCode
+# User settings: "remote.extensionKind": {"Continue.continue": ["workspace"]}
+
+name: Advent of Code 2025
+version: 1.0.0
+schema: v1
+
+models:
+  - name: "Qwen 32B (Chat)"
+    provider: openai
+    model: "hf.co/qwen/qwen2.5-coder-32b-instruct-gguf:Q4_K_M"
+    apiBase: "http://host.docker.internal:12434/v1"
+    apiKey: "not-needed"
+    roles:
+      - chat
+      - edit
+
+  - name: "Qwen 32B (Autocomplete)"
+    provider: openai
+    model: "hf.co/qwen/qwen2.5-coder-32b-instruct-gguf:Q4_K_M"
+    apiBase: "http://host.docker.internal:12434/v1"
+    roles:
+      - autocomplete
